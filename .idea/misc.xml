@@ -3,11 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-large/activity_detail.xml" value="0.1" />
         <entry key="app/src/main/res/layout-large/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-large/fragment_stoper.xml" value="0.13083397092578425" />
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.15625" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_trail_detail.xml" value="0.15625" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_temp.xml" value="0.17325227963525835" />
+        <entry key="app/src/main/res/layout/fragment_stoper.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_stopper.xml" value="0.17325227963525835" />
+        <entry key="app/src/main/res/layout/fragment_trail_detail.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_trail_list.xml" value="0.15625" />
+        <entry key="app/src/main/res/layout/toolbar_main.xml" value="0.17325227963525835" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.15178571428571427" />
       </map>
     </option>
   </component>
