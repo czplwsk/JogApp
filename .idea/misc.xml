@@ -3,16 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../Android/Sdk/platforms/android-31/data/res/layout/simple_list_item_1.xml" value="0.35625" />
+        <entry key="app/src/main/res/drawable-anydpi/done.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable-nodpi/done-48px.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/ic_baseline_more_vert_24.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/sun.xml" value="0.1" />
         <entry key="app/src/main/res/layout-large/activity_detail.xml" value="0.1" />
         <entry key="app/src/main/res/layout-large/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout-large/fragment_stoper.xml" value="0.13083397092578425" />
-        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.15625" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_first.xml" value="0.1675925925925926" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_temp.xml" value="0.17325227963525835" />
+        <entry key="app/src/main/res/layout/card_captioned_image.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_front.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_stoper.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_stopper.xml" value="0.17325227963525835" />
-        <entry key="app/src/main/res/layout/fragment_trail_detail.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_sunset.xml" value="0.10840932117527863" />
+        <entry key="app/src/main/res/layout/fragment_sunset2.xml" value="0.10840932117527863" />
+        <entry key="app/src/main/res/layout/fragment_tab1.xml" value="0.16590678824721378" />
+        <entry key="app/src/main/res/layout/fragment_trail_detail.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_trail_list.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/toolbar_main.xml" value="0.17325227963525835" />
         <entry key="app/src/main/res/menu/menu_main.xml" value="0.15178571428571427" />

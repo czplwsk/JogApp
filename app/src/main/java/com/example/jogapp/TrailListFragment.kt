@@ -17,8 +17,8 @@ class TrailListFragment : ListFragment() {
         savedInstanceState: Bundle?
     ): View? {
         val titles = mutableListOf<String>()
-        for (i in trails.indices){
-            titles.add(trails[i].title)
+        for (i in Trail.trails.indices){
+            titles.add(Trail.trails[i].name)
         }
 
         val adapter: ArrayAdapter<String> = ArrayAdapter(inflater.context, android.R.layout.simple_list_item_1, titles)
@@ -33,12 +33,13 @@ class TrailListFragment : ListFragment() {
     }
 
     override fun onListItemClick(l: ListView, v: View, position: Int, id: Long) {
-        listener.itemClicked(id)
+        val intId = id.toInt()
+        listener.itemClicked(intId)
     }
 
 
-    internal interface Listener {
-        fun itemClicked(id: Long)
+    interface Listener {
+        fun itemClicked(id: Int)
     }
 
 }

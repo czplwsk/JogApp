@@ -1,19 +1,21 @@
 package com.example.jogapp
 
-import android.content.Context
+//import android.support.v4.app.AppCompatActivity
 import android.content.Intent
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.widget.Toolbar
-//import android.support.v4.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.FragmentTransaction
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
 
-class MainActivity : AppCompatActivity() , TrailListFragment.Listener {
+class MainActivity : AppCompatActivity() ,TrailListFragment.Listener {
+
+    private lateinit var viewPager: ViewPager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +24,17 @@ class MainActivity : AppCompatActivity() , TrailListFragment.Listener {
         setSupportActionBar(toolbar)
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
+
+        val fragmentContainer = findViewById<View>(R.id.fragment_container)
+        if(fragmentContainer == null) {
+
+            val pagerAdapter = SectionsPagerAdapter((supportFragmentManager))
+            viewPager = findViewById(R.id.pager)
+            viewPager.adapter = pagerAdapter
+
+            val tabs = findViewById<TabLayout>(R.id.tabs)
+            tabs?.setupWithViewPager(viewPager)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -41,13 +54,14 @@ class MainActivity : AppCompatActivity() , TrailListFragment.Listener {
     }
 
 
-    override fun itemClicked(id: Long) {
+    override fun itemClicked(id: Int) {
         val fragmentContainer = findViewById<View>(R.id.fragment_container)
         if(fragmentContainer != null){
 
             val transaction: FragmentTransaction = supportFragmentManager.beginTransaction()
-            val fragment: TrailDetailFragment = TrailDetailFragment()
-            fragment.setTrail(id)
+            val fragment = TrailDetailFragment()
+            val intId = id.toInt()
+            fragment.setTrail(intId)
             transaction.replace(R.id.fragment_container, fragment)
             transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
             transaction.addToBackStack(null)
@@ -58,4 +72,6 @@ class MainActivity : AppCompatActivity() , TrailListFragment.Listener {
             startActivity(intent)
         }
     }
+
+
 }

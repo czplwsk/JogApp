@@ -11,9 +11,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 
 class TrailDetailFragment : Fragment() {
-    lateinit var shared: SharedPreferences
-    private var trailId: Long = -2
-    private val trails = com.example.jogapp.trails
+    private lateinit var shared: SharedPreferences
+    private var trailId: Int = -2
+    private val trails = Trail.trails
 
     companion object {
         lateinit var trailName: String
@@ -24,12 +24,12 @@ class TrailDetailFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         if (savedInstanceState != null) {
-            trailId = savedInstanceState.getLong("trailId")
+            trailId = savedInstanceState.getInt("trailId")
         }
         else{
             val stoper = StoperFragment()
             val bundle = Bundle()
-            bundle.putInt("id", trailId.toInt())
+            bundle.putInt("id", trailId)
             stoper.arguments = bundle
             val ft: FragmentTransaction = childFragmentManager.beginTransaction()
             ft.add(R.id.stoper_container, stoper)
@@ -51,30 +51,30 @@ class TrailDetailFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         shared = context?.getSharedPreferences("MyPref",MODE_PRIVATE)!!
-        shared.edit().putLong("id",trailId).commit()
+        shared.edit().putInt("id",trailId).apply()
 
 
         val view = view
         if (view != null) {
-            trailName = trails[trailId.toInt()].title
-            val trail: Trail = trails[trailId.toInt()]
+            trailName = trails[trailId].name
+            val trailClass: Trail = trails[trailId]
 
             val title = view.findViewById<View>(R.id.textTitle) as TextView
-            title.text = trail.title
+            title.text = trailClass.name
 
             val description = view.findViewById<View>(R.id.textBody) as TextView
-            description.text = trail.body
+            description.text = trailClass.description
         }
     }
 
-    fun setTrail(id: Long) {
+    fun setTrail(id: Int) {
         this.trailId = id
     }
 
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-        outState.putLong("trailId", trailId)
+        outState.putInt("trailId", trailId)
     }
 
 

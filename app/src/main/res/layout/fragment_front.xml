@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FrontFragment">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:gravity="left"
+        android:text="Aplikacja z trasami biegowymi. Do wyboru szereg tras podzielonych ze względu na poziom trudności oraz długość.\n
+        \n W JogApp skorzystasz ze stopera w celu zmierzenia i zapisania swojego najlepszego wyniku na danej trasie.\n
+\n Aplikacja dostosowana jest do wszystkich urządzeń mobilnych. "
+
+       />
+
+</FrameLayout>

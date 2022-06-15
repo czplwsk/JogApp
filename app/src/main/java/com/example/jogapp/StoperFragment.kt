@@ -91,7 +91,7 @@ class StoperFragment : Fragment(), View.OnClickListener {
     @SuppressLint("SetTextI18n")
     fun onClickSave(){
 
-        idTrail = (shared.all["id"] as Long).toInt()
+        idTrail = (shared.all["id"] as Int)
         val trail = trails[idTrail]
         val sdf = SimpleDateFormat("dd/M/yyyy")
         val currentDate = sdf.format(Date())

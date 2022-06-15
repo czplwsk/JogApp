@@ -1,10 +1,11 @@
 package com.example.jogapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 
 class DetailActivity : AppCompatActivity() {
@@ -18,13 +19,20 @@ class DetailActivity : AppCompatActivity() {
         val actionBar = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
-        var frag : TrailDetailFragment = supportFragmentManager.findFragmentById(R.id.detail_frag) as TrailDetailFragment
+        val frag : TrailDetailFragment = supportFragmentManager.findFragmentById(R.id.detail_frag) as TrailDetailFragment
 
         val extras = intent.extras
         if(extras!=null) {
-            frag.setTrail(extras.get("ID") as Long)
+            frag.setTrail(extras.get("ID") as Int)
         }
+
     }
+
+    fun onClickDone(view: View){
+        Toast.makeText(this, "You tapped FAB!", Toast.LENGTH_SHORT).show()
+    }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -41,4 +49,6 @@ class DetailActivity : AppCompatActivity() {
                 super.onOptionsItemSelected(item)
         }
     }
+
+
 }

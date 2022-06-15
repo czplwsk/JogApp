@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JogApp">
         <activity
+            android:name=".FirstActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".SectionsPagerAdapter"
             android:exported="false" />
         <activity
@@ -25,6 +34,7 @@
         </activity>
         <activity
             android:name=".DetailActivity"
+            android:parentActivityName=".MainActivity"
             android:exported="false"
             android:label="Szczegóły">
             <meta-data
@@ -39,11 +49,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
